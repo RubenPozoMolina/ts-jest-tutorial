@@ -3,7 +3,7 @@ import { Department } from "../src/department"
 
 describe("Person tests", () => {
     test("Check person creation", () => {
-        let expectedName = "Jhon";
+        let expectedName = "John";
         let expectedAge = 40;
         let person = new Person(expectedName, expectedAge, new Department("Finances"));
         expect(person.getName()).toBe(expectedName);
@@ -12,19 +12,19 @@ describe("Person tests", () => {
     });
 
     test("Check person setters", () => {
-        let name = "Jhon";
+        let name = "John";
         let age = 40;
         let person = new Person(name, age);
-        person.setName("Jhon Doe");
+        person.setName("John Doe");
         person.setAge(41);
         person.setDepartment(new Department("Finances"));
-        expect(person.getName()).toBe("Jhon Doe");
+        expect(person.getName()).toBe("John Doe");
         expect(person.getAge()).toBe(41);
         expect(person.getDepartment()).toStrictEqual(new Department("Finances"));
     });
 
     test("Check person exceptions", () => {
-        let person = new Person("Jhon", 1);
+        let person = new Person("John", 1);
         expect(() => { person.setName("") }).toThrowError(new Error("Name cannot be empty"));
         expect(() => { person.setAge(-1) }).toThrowError(new Error("Age must be greater than 0"));
     });
