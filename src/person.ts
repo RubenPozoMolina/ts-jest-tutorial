@@ -16,10 +16,10 @@ class Person {
     }
 
     public setName(pName: string): void {
-        if (!pName || pName === "") {
-            throw new Error("Name cannot be empty or null")
-        } else {
+        if (pName) {
             this.Name = pName;
+        } else {
+            throw new Error("Name cannot be empty")
         }
     }
 

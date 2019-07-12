@@ -21,7 +21,7 @@ describe("Person tests", () => {
 
     test("Check person exceptions", () => {
         let person = new Person("Jhon", 1);
-        expect(() => { person.setName("") }).toThrowError(new Error("Name cannot be empty or null"));
+        expect(() => { person.setName("") }).toThrowError(new Error("Name cannot be empty"));
         expect(() => { person.setAge(-1) }).toThrowError(new Error("Age must be greater than 0"));
     });
 
