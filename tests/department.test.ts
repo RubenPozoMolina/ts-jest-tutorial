@@ -5,6 +5,7 @@ describe("Department tests", () => {
         let expectedName = "Finances";
         let department = new Department(expectedName);
         expect(department.getName()).toBe(expectedName);
+        expect(department.getAbbreviatedName()).toBe("Fin");
     });
 
     test("Check department setters", () => {

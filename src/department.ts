@@ -12,6 +12,10 @@ class Department {
     public getName(): string {
         return this.Name;
     }
+
+    public getAbbreviatedName(): string {
+        return this.Name.substring(0, 3);
+    }
 }
 
 export { Department }
