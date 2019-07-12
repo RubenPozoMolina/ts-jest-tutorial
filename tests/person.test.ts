@@ -1,12 +1,14 @@
 import { Person } from "../src/person"
+import { Department } from "../src/department"
 
 describe("Person tests", () => {
     test("Check person creation", () => {
         let expectedName = "Jhon";
         let expectedAge = 40;
-        let person = new Person(expectedName, expectedAge);
+        let person = new Person(expectedName, expectedAge, new Department("Finances"));
         expect(person.getName()).toBe(expectedName);
         expect(person.getAge()).toBe(expectedAge);
+        expect(person.getDepartment()).toStrictEqual(new Department("Finances"));
     });
 
     test("Check person setters", () => {
@@ -15,8 +17,10 @@ describe("Person tests", () => {
         let person = new Person(name, age);
         person.setName("Jhon Doe");
         person.setAge(41);
+        person.setDepartment(new Department("Finances"));
         expect(person.getName()).toBe("Jhon Doe");
         expect(person.getAge()).toBe(41);
+        expect(person.getDepartment()).toStrictEqual(new Department("Finances"));
     });
 
     test("Check person exceptions", () => {
