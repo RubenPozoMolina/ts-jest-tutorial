@@ -1,4 +1,4 @@
-import { Department } from "../src/department"
+import Department from "../src/department"
 
 describe("Department tests", () => {
     test("Check department creation", () => {

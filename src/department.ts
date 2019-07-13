@@ -1,4 +1,4 @@
-class Department {
+export default class Department {
     private Name: string = "";
 
     constructor(pName: string) {
@@ -17,5 +17,3 @@ class Department {
         return this.Name.substring(0, 3);
     }
 }
-
-export { Department }

@@ -1,14 +1,13 @@
-import { Department } from "../src/department"
+import Department from "../src/department"
 
 class Person {
     private Name: string = ""
     private Age: number = 0
-    private WorkingDepartment: Department | null;
+    private WorkingDepartment: Department | null = null;
 
-    constructor(pName: string, pAge: number, pDepartment?: Department) {
+    constructor(pName: string, pAge: number, pDepartment?: string) {
         this.setName(pName);
         this.setAge(pAge);
-        this.WorkingDepartment = null;
         if (pDepartment)
             this.setDepartment(pDepartment);
     };
@@ -21,8 +20,11 @@ class Person {
         return this.Age;
     }
 
-    public getDepartment(): Department | null {
-        return this.WorkingDepartment;
+    public getDepartment(): string {
+        if (this.WorkingDepartment)
+            return this.WorkingDepartment.getName()
+        else
+            return "";
     }
 
     public setName(pName: string): void {
@@ -41,8 +43,8 @@ class Person {
         }
     }
 
-    public setDepartment(pDepartment: Department) {
-        this.WorkingDepartment = pDepartment;
+    public setDepartment(pDepartment: string) {
+        this.WorkingDepartment = new Department(pDepartment);
     }
 }
 
